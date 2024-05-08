@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('auth')->group(function () {
-    Route::get('/', function () {
-        return view('index');
-    })->name('index');
+    Route::get('/', [UserController::class, 'index'])->name('index');
+
+    
 });
 
 Route::post('/action/login', [AuthController::class, 'login'])->name('ac.login');
