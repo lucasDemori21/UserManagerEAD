@@ -19,7 +19,9 @@ class AuthController extends Controller
         if (auth()->attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->route('index');
-        } 
+        }else{
+            return redirect()->route('login')->with('error', 'Invalid Credentials');
+        }
     }
 
     public function register(Request $request){

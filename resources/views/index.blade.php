@@ -14,8 +14,8 @@
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>
-                    <a href="#" class="btn btn-danger"><i class="bi bi-trash"></i></a>
-                    <a href="#" class="btn btn-secondary"><i class="bi bi-pen"></i></a>
+                    <a href="{{ route('update', ['id' => $user->id]) }}" class="btn btn-secondary"><i class="bi bi-pen"></i></a>
+                    <a href="{{ route('destroy', ['id' => $user->id]) }}" class="btn btn-danger"><i class="bi bi-trash"></i></a>
                 </td>
             </tr>
         @endforeach

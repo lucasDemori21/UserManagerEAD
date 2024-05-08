@@ -17,8 +17,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
     Route::get('/', [UserController::class, 'index'])->name('index');
-
-    
+    Route::post('/update/user', [UserController::class, 'update'])->name('ac.update');
+    Route::get('/delete/user/{id}', [UserController::class, 'destroy'])->name('destroy');
+    Route::get('/update/{id}', [UserController::class, 'showUpdate'])->name('update');
 });
 
 Route::post('/action/login', [AuthController::class, 'login'])->name('ac.login');
