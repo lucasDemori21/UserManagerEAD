@@ -16,6 +16,7 @@
             <label for="password" class="form-label">Digite nova senha</label>
             <input type="password" class="form-control" id="password" name="password">
         </div>
+        <input type="hidden" name="id" value="{{ $user->id }}">
         <div class="text-center">
             <a href="{{route('index')}}" class="btn btn-danger">Voltar</a>
             <button type="submit" class="btn btn-primary">Atualizar</button>

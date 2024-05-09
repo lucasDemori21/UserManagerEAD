@@ -19,9 +19,9 @@ class UserController extends Controller
         return view('users.update', ['user' => $user]);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $user = User::find($id);
+        $user = User::find($request->id);
         $user->name = $request->name;
         $user->email = $request->email;
 

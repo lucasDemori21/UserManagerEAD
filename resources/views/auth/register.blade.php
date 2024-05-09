@@ -15,7 +15,14 @@
             <label for="password" class="form-label">Senha</label>
             <input type="password" class="form-control" id="password" name="password">
         </div>
-        <div class="text-center">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                @foreach ($errors->all() as $error)
+                    <span class="text-center">{{ $error }}</span>
+                @endforeach
+            </div>
+        @endif
+        <div class="text-center mt-3">
             <button type="submit" class="btn btn-primary">Registrar</button>
         </div>
     </form>
